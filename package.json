@@ -1,7 +1,7 @@
 {
   "name": "bland-ai-cookbooks",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bland AI Cookbooks",
   "main": "index.js",
   "scripts": {
     "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
