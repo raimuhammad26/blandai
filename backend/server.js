@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const cors = require("cors");
+const path = require('path');
 
 // Server setup
 app.use(cors());
@@ -117,6 +118,14 @@ app.post("/request-demo", (req, res) => {
         .status(400)
         .send({ message: "Error dispatching phone call", status: "error" });
     });
+});
+
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// Handle all GET requests by sending back the React app's index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
