@@ -13,6 +13,10 @@ app.use(express.json());
 const apiKey = process.env.BLAND_API_KEY;
 const PORT = process.env.PORT || 4000;
 
+//Testing Logging
+console.log("API Key is: " + apiKey)
+console.log("Transfer phone number is: " + process.env.TRANSFER_PHONE_NUMBER)
+
 // Handle form submissions
 app.post("/request-demo", (req, res) => {
   // Data succesfully received from Frontend
@@ -79,7 +83,7 @@ app.post("/request-demo", (req, res) => {
   `;
 
   // After the phone agent qualifies the lead, they'll transfer to this phone number
-  const TRANSFER_PHONE_NUMBER = "XXX-XXX-XXXX";
+  // const TRANSFER_PHONE_NUMBER = "XXX-XXX-XXXX";
 
   // Create the parameters for the phone call. Ref: https://docs.bland.ai/api-reference/endpoint/call
   const data = {
@@ -87,7 +91,7 @@ app.post("/request-demo", (req, res) => {
     task: prompt,
     voice_id: 1,
     reduce_latency: false,
-    transfer_phone_number: TRANSFER_PHONE_NUMBER,
+    transfer_phone_number: process.env.TRANSFER_PHONE_NUMBER,
   };
 
   // Dispatch the phone call
