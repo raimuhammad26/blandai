@@ -31,7 +31,8 @@ const RequestDemoForm = () => {
   const sendPhoneCall = async () => {
     setIsSubmitting(true);
     try {
-      await axios.post("http://localhost:4000/request-demo", formData);
+      // await axios.post("http://localhost:4000/request-demo", formData);
+      await axios.post("https://blandleadqualification-37f079f2a851.herokuapp.com/request-demo", formData);
       toast("Phone call sent!", { type: "success" });
     } catch (error) {
       toast("Error dispatching phone call!", { type: "error" });
