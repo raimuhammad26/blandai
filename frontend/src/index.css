@@ -15,3 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-gray-100{
+  background-color: #fff;
+}
+
+.blackbutton{
+  background-color: #188AFC;
+}

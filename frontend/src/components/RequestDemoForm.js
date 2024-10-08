@@ -127,7 +127,7 @@ const RequestDemoForm = () => {
       </label>
 
       <label className="block">
-        <span className={labelStyle}>Use case</span>
+        <span className={labelStyle}>Industry</span>
         <textarea
           name="useCase"
           onChange={handleChange}
@@ -138,7 +138,7 @@ const RequestDemoForm = () => {
 
       <button
         type="submit"
-        className="mt-4 bg-gray-800 hover:bg-black text-white font-medium py-2 px-4 rounded shadow-lg transform transition duration-200 flex justify-center items-center"
+        className="blackbutton mt-4 bg-gray-800 hover:bg-black text-white font-medium py-2 px-4 rounded shadow-lg transform transition duration-200 flex justify-center items-center"
         disabled={isSubmitting}
       >
         {isSubmitting && (
@@ -156,7 +156,7 @@ const RequestDemoForm = () => {
           />
         )}
 
-        <span className="ml-2">Request Demo</span>
+        <span className="ml-2">Call Me</span>
       </button>
     </form>
   );
